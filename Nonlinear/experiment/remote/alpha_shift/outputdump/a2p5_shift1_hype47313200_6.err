@@ -1,0 +1,2 @@
+mkdir: cannot create directory ‘resultsdump/job_a2p5_shift1_hype’: File exists
+mkdir: cannot create directory ‘resultsdump/job_a2p5_shift1_hype/pickles’: File exists
