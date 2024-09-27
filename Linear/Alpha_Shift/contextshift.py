@@ -14,13 +14,14 @@ lam = 0.000000000001
 
 n_MC = 10  # Number of Monte Carlo runs
 
-Alphas = np.linspace(0.1,5,50)
+Alphas = np.linspace(0.1,10,100)
 final_vals = []
 for i in range(n_MC):
     H_z, yfinals = context_shift_compute_H_Z_andYs(P, d, int(alphashift_low*d), int(alphashift_low*d), K, rho)
     Gamma_star = compute_Gamma_star(P, d, H_z, yfinals, lam)
     Alpha_tests = [e_ICL_g_tr(Gamma_star, d, Alpha, rho) for Alpha in Alphas]
-    print(Alpha_tests)
+    #print(Alpha_tests)
+    print(i)
     final_vals.append(Alpha_tests)
 
 final_vals = np.array(final_vals)
