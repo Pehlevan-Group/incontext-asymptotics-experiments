@@ -100,20 +100,20 @@ def gen_err_analytical_NEW(Gamma, alpha, muhat, Rhat, rho):
     value = 1 + rho + ((1+rho)/d)*t2 - (2/d)*t1
     return value
 
-def monte_carlo_test_error(Gamma_star, d, l, n_test, rho):
-    x_test = np.random.randn(n_test, l+1, d) / np.sqrt(d)
-    w_test = np.random.randn(n_test, d)
-    epsilon_test = np.random.randn(n_test, l+1) * np.sqrt(rho)
-    y_test = np.einsum('nij,nj->ni', x_test, w_test) + epsilon_test
+def monte_carlo_test_error(Gamma_star, d, l, n_test, rho, Ctest, Mutest):
+    # x_test = np.random.randn(n_test, l+1, d) / np.sqrt(d)
+    # w_test = np.random.randn(n_test, d)
+    # epsilon_test = np.random.randn(n_test, l+1) * np.sqrt(rho)
+    # y_test = np.einsum('nij,nj->ni', x_test, w_test) + epsilon_test
 
     # Construct test H_Z
-    H_Z_test = construct_H_Z(x_test, y_test, l, d)
+    H_Z_test, yfinals = context_shift_compute_H_Z_andYs(n_test,d,l,l,100000,rho,Ctest,Mutest)
 
     # Predictions
     y_pred = np.einsum('nkl,kl->n', H_Z_test, Gamma_star)
 
     # Calculate mean squared error
-    mse = np.mean((y_pred - y_test[:, l])**2)
+    mse = np.mean((y_pred - yfinals)**2)
     return mse
 
 
@@ -210,12 +210,12 @@ def gen_err_analytical_NEW(Gamma, alpha, muhat, Rhat, rho):
     return value
 
 
-def context_shift_compute_H_Z_andYs(P, d, N_low, N_high, K, rho, Covariance):
+def context_shift_compute_H_Z_andYs(P, d, N_low, N_high, K, rho, Covariance, mu):
     # Assume contextlengths is an array of length n where each element represents the context length for that row
     contextlengths = np.random.randint(N_low, N_high+1, size=P)  # Example of variable context lengths
 
     x = [np.random.randn(cl+1, d) / np.sqrt(d) for cl in contextlengths]  # List of x arrays with different context lengths
-    w_set = np.random.multivariate_normal(np.zeros(d), Covariance, K) #np.random.randn(K, d)
+    w_set = np.random.multivariate_normal(mu, Covariance, K) #np.random.randn(K, d)
     # norms = np.linalg.norm(w_set, axis=1)  # Calculate norms of each row
     # scaling_factor = np.sqrt(d) / norms[:, np.newaxis]  # Compute scaling factor for normalization
     # w_set = w_set * scaling_factor
