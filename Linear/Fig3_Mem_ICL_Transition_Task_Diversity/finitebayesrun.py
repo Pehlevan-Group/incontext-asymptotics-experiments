@@ -7,31 +7,22 @@ def S_W(c, alpha):
 
 d = 100
 directory = sys.argv[1]
-kappa = float(sys.argv[2]) 
-alphaind = int(sys.argv[3]) - 1
+alpha = float(sys.argv[2]) 
+kappaind = int(sys.argv[3]) - 1
 sigma_beta = 1
 sigma_noise = np.sqrt(0.01)
 
-alphas = np.linspace(0.1,2,500);
-alpha = alphas[alphaind]
+K_array = list(np.int64(np.logspace(np.log10(0.05*d),np.log10(500*d),40))); #list(np.int64(np.logspace(np.log10(0.05*d),np.log10(500*d),40)));
+K = K_array[kappaind]
 N = np.int64(alpha * d)
 
-nsim = 500000
+nsim = 50000
 
 e_B_full_ary = np.zeros(nsim)
 e_B_finite_ary = np.zeros(nsim)
-# K_ary = np.int64(np.logspace(1, 4, 3))
-# K_ary = np.int64(d * np.logspace(-1, 2, 5))
-# K_ary = np.int64(np.logspace(np.log10(2), np.log10(100*d), 6))
-#kappa_ary = np.logspace(np.log10(0.01),np.log10(250),50); K = np.int64(kappa_ary*d);
-#K_array = np.int64(np.array([0.01,0.03,0.06,0.11,0.2,0.37,0.69,1.27,2.33,4.28,7,84,14.38,26.36,48.32,88.58,162.37,297.63,545.55,1000])*d)
-# K_array = list(np.int64(np.logspace(np.log10(0.05*d),np.log10(500*d),40))); #list(np.int64(np.logspace(np.log10(0.05*d),np.log10(500*d),40))); 
-# K_array = [i for n, i in enumerate(K_array) if i not in K_array[:n]]
-# K_array = np.array(K_array)
-# K = K_array[ind]
 
-K = int(kappa*d);
-print(f'kappa is {kappa}')
+# K = int(kappa*d);
+print(f'kappa is {K/d}')
 B = np.random.randn(d, K)
 
 # IsFinite = True
@@ -97,16 +88,16 @@ for i in range(nsim):
     e_B_full_ary[i] = ((xv.T @ beta_hat).item() - yv)**2
     e_B_finite_ary[i] = ((xv.T @ beta_hat_finite).item() - yv)**2
 
-ind = alphaind
+ind = kappaind
 filename = f'{directory}/icl_dmmse_m.txt'
 with open(filename, 'a') as file:
-    file.write(f'{ind}, {np.mean(e_B_finite_ary)}\n')
+    file.write(f'[{ind}, {np.mean(e_B_finite_ary)}],')
 filename = f'{directory}/icl_ridge_m.txt'
 with open(filename, 'a') as file:
-    file.write(f'{ind}, {np.mean(e_B_full_ary)}\n')
+    file.write(f'[{ind}, {np.mean(e_B_full_ary)}],')
 filename = f'{directory}/icl_dmmse_s.txt'
 with open(filename, 'a') as file:
-    file.write(f'{ind}, {np.std(e_B_finite_ary)}\n')
+    file.write(f'[{ind}, {np.std(e_B_finite_ary)}],')
 filename = f'{directory}/icl_ridge_s.txt'
 with open(filename, 'a') as file:
-    file.write(f'{ind}, {np.std(e_B_full_ary)}\n')
+    file.write(f'[{ind}, {np.std(e_B_full_ary)}],')

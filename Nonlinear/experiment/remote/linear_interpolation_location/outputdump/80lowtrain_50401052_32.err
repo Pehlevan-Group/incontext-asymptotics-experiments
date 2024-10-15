@@ -1,0 +1,3 @@
+mkdir: cannot create directory ‘pnas/80lowtrain’: File exists
+mkdir: cannot create directory ‘pnas/80lowtrain/pickles’: File exists
+mkdir: cannot create directory ‘pnas/80lowtrain/errors’: File exists

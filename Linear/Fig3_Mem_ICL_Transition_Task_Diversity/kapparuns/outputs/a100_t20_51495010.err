@@ -1,0 +1,5 @@
+  0%|          | 0/10 [00:00<?, ?it/s]  0%|          | 0/10 [00:00<?, ?it/s]  0%|          | 0/10 [00:00<?, ?it/s]slurmstepd: error: *** JOB 51495076 ON holygpu8a19106 CANCELLED AT 2024-10-14T13:10:14 ***
+slurmstepd: error: *** JOB 51495053 ON holygpu8a19404 CANCELLED AT 2024-10-14T13:10:14 ***
+slurmstepd: error: *** JOB 51495010 ON holygpu8a19603 CANCELLED AT 2024-10-14T13:10:14 ***
+slurmstepd: error: *** JOB 51495078 ON holygpu8a19301 CANCELLED AT 2024-10-14T13:10:14 ***
+slurmstepd: error: *** JOB 51495079 ON holygpu8a19501 CANCELLED AT 2024-10-14T13:10:14 ***

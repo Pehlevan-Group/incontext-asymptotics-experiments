@@ -1,0 +1,4 @@
+mkdir: cannot create directory ‘pnas/80lowtrain’: File exists
+mkdir: cannot create directory ‘pnas/80lowtrain/pickles’: File exists
+mkdir: cannot create directory ‘pnas/80lowtrain/errors’: File exists
+slurmstepd: error: *** JOB 50468941 ON holygpu8a29304 CANCELLED AT 2024-10-10T10:27:26 DUE TO TIME LIMIT ***
