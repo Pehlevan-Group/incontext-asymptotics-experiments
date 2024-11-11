@@ -1,0 +1,3 @@
+mkdir: cannot create directory ‘pnas/job_largekappa_alpha1_d50’: File exists
+  0%|          | 0/1000 [00:00<?, ?it/s]/var/slurmd/spool/slurmd/job53056701/slurm_script: line 20: 2084087 Killed                  python finitebayesrun.py 50 $newdir 1 $SLURM_ARRAY_TASK_ID 0.1
+slurmstepd: error: Detected 1 oom_kill event in StepId=53056701.batch. Some of the step tasks have been OOM Killed.

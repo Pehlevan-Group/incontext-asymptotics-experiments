@@ -1,0 +1,2 @@
+mkdir: cannot create directory ‘pnas/job_fig4_alpha5_highnoise’: File exists
+slurmstepd: error: *** JOB 52589607 ON holy7c24212 CANCELLED AT 2024-10-23T11:28:08 DUE TO TIME LIMIT ***

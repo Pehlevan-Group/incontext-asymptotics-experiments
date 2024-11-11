@@ -1,0 +1,2 @@
+  0%|          | 0/20 [00:00<?, ?it/s]/var/slurmd/spool/slurmd/job52593245/slurm_script: line 15: 1033020 Killed                  python largealpha.py 100 5 5000
+slurmstepd: error: Detected 1 oom_kill event in StepId=52593245.batch. Some of the step tasks have been OOM Killed.

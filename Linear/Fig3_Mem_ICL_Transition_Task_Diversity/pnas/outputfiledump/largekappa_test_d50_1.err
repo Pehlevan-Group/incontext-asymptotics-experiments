@@ -1,0 +1,9 @@
+mkdir: cannot create directory ‘pnas/job_largekappa_test_d50’: File exists
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/n/holyscratch01/pehlevan_lab/Lab/mletey/incontext-asymptotics-experiments/Linear/Fig3_Mem_ICL_Transition_Task_Diversity/finitebayesrun.py", line 35, in <module>
+    beta = B[:, np.random.randint(K)].reshape(d, 1)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/mtrand.pyx", line 781, in numpy.random.mtrand.RandomState.randint
+  File "numpy/random/_bounded_integers.pyx", line 1334, in numpy.random._bounded_integers._rand_int64
+ValueError: high <= 0

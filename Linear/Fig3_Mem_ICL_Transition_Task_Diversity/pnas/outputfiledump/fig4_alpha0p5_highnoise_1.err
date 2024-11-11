@@ -1,0 +1,2 @@
+mkdir: cannot create directory ‘pnas/job_fig4_alpha0p5_highnoise’: File exists
+slurmstepd: error: *** JOB 52588009 ON holy7c24309 CANCELLED AT 2024-10-22T11:07:52 ***
