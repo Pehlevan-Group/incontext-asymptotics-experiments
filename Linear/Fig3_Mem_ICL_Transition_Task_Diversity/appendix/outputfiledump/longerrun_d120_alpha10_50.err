@@ -1,0 +1,9 @@
+mkdir: cannot create directory ‘appendix/job_longerrun_d120_alpha10’: File exists
+Traceback (most recent call last):
+  File "/n/netscratch/pehlevan_lab/Lab/ml/incontext-asymptotics-experiments/Linear/Fig3_Mem_ICL_Transition_Task_Diversity/finitebayesrun.py", line 29, in <module>
+    B = np.random.randn(d, K)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/mtrand.pyx", line 1286, in numpy.random.mtrand.RandomState.randn
+  File "numpy/random/mtrand.pyx", line 1447, in numpy.random.mtrand.RandomState.standard_normal
+  File "_common.pyx", line 636, in numpy.random._common.cont
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 536. GiB for an array with shape (120, 599999999) and data type float64

@@ -1,0 +1,6 @@
+mkdir: cannot create directory ‘appendix/job_longerrun_d80_alpha10’: File exists
+Traceback (most recent call last):
+  File "/n/netscratch/pehlevan_lab/Lab/ml/incontext-asymptotics-experiments/Linear/Fig3_Mem_ICL_Transition_Task_Diversity/finitebayesrun.py", line 88, in <module>
+    c = -np.linalg.norm(y - X.T @ B, axis=0)**2/(2*sigma_noise**2)
+                            ~~~~^~~
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 364. GiB for an array with shape (800, 61056718) and data type float64
