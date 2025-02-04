@@ -15,15 +15,15 @@ print(d)
 print(kappa)
 K = int(kappa * d)  # Context length
 
-rho = 0.5; sigma_noise = np.sqrt(rho); sigma_beta = 1; 
+rho = 0.1; sigma_noise = np.sqrt(rho); sigma_beta = 1; 
 tau = 0.5;
 lam = 0.000000001
 
 numavg = 20;
-alpha_sim_ary = [1, 6.15, 100, 1000]
+alpha_sim_ary = [2.35, 5.5, 9.62, 22.7, 100, 1000]
 #FIG 2A [1, 6.15, 100, 1000]
 #FIG 2B [2.35, 9.62, 100, 1000]
-#FIG 2C [1, 4.69, 16.78, 44.94, 79.06,1000]
+#FIG 2C [1, 4.69, 16.78, 44.94, 79.06, 1000]
 
 alpha = alpha_sim_ary[alphaind]
 l = int(alpha * d)

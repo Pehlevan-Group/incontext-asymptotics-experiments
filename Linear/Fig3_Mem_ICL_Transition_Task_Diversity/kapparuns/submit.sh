@@ -1,17 +1,18 @@
 #!/bin/bash
-# a100_t4_d70_kempner.sbatch
+# PNAS_final_FIG4_a40_t8_d140.sbatch
 # 
-#SBATCH --job-name=a100_t4_d70_kempner
-#SBATCH --gpus 1
+#SBATCH --job-name=PNAS_final_FIG4_a40_t8_d140
 #SBATCH -t 1-00:00:00
-#SBATCH -p kempner
+#SBATCH -p seas_compute
 #SBATCH --mem=48000
-#SBATCH -o /n/holyscratch01/pehlevan_lab/Lab/mletey/incontext-asymptotics-experiments/Linear/Fig3_Mem_ICL_Transition_Task_Diversity/kapparuns/results/a100_t4_d70_kempner_%a.out
-#SBATCH -e /n/holyscratch01/pehlevan_lab/Lab/mletey/incontext-asymptotics-experiments/Linear/Fig3_Mem_ICL_Transition_Task_Diversity/kapparuns/outputs/a100_t4_d70_kempner_%a.err
+#SBATCH -o /n/netscratch/pehlevan_lab/Lab/ml/incontext-asymptotics-experiments/Linear/Fig3_Mem_ICL_Transition_Task_Diversity/kapparuns/outputs/PNAS_final_FIG4_a40_t8_d140_%a.out
+#SBATCH -e /n/netscratch/pehlevan_lab/Lab/ml/incontext-asymptotics-experiments/Linear/Fig3_Mem_ICL_Transition_Task_Diversity/kapparuns/outputs/PNAS_final_FIG4_a40_t8_d140_%a.err
 #SBATCH --array=1-5
 #SBATCH --mail-type=END
 #SBATCH --mail-user=maryletey@fas.harvard.edu
-#SBATCH --account=kempner_pehlevan_lab
 
 source activate try4
-python kappa.py 70 100 4 $SLURM_ARRAY_TASK_ID
+parentdir="results"
+newdir="$parentdir/${SLURM_JOB_NAME}"
+mkdir "$newdir"
+python kappa.py 140 40 8 $SLURM_ARRAY_TASK_ID $newdir

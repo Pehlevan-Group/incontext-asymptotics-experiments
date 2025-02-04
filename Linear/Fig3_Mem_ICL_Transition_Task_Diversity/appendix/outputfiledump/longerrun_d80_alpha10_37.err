@@ -1,3 +1,2 @@
 mkdir: cannot create directory ‘appendix/job_longerrun_d80_alpha10’: File exists
-/var/slurmd/spool/slurmd/job66610237/slurm_script: line 20: 1303720 Killed                  python finitebayesrun.py 80 $newdir 10 $SLURM_ARRAY_TASK_ID 0.1
-slurmstepd: error: Detected 1 oom_kill event in StepId=66610237.batch. Some of the step tasks have been OOM Killed.
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 1/1000 [00:00<12:16,  1.36it/s]  0%|          | 2/1000 [00:01<11:58,  1.39it/s]  0%|          | 3/1000 [00:02<11:49,  1.40it/s]  0%|          | 4/1000 [00:02<11:48,  1.41it/s]  0%|          | 5/1000 [00:03<11:46,  1.41it/s]  1%|          | 6/1000 [00:04<11:46,  1.41it/s]  1%|          | 7/1000 [00:04<11:43,  1.41it/s]  1%|          | 8/1000 [00:05<11:43,  1.41it/s]  1%|          | 9/1000 [00:06<11:43,  1.41it/s]  1%|          | 10/1000 [00:07<11:42,  1.41it/s]slurmstepd: error: *** JOB 1991266 ON holy8a14202 CANCELLED AT 2025-02-03T17:17:54 ***
