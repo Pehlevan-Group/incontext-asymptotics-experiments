@@ -11,7 +11,7 @@ Paper links:
 
 ## Paper Overview
 
-This paper studies in-context learning in a controlled regression setting. The main analytical object is a simplified linear attention model trained on linear regression tasks. This model is exactly solvable, allowing us to derive sharp asymptotic predictions, while still retaining the key quadratic interaction between tokens that makes attention useful for ICL. Phenomenologically, we identify
+This paper studies in-context learning in a linear regression setting. The main analytical object is a simplified linear attention model trained on linear regression tasks. This model is exactly solvable, allowing us to derive sharp asymptotic predictions, while still retaining the key quadratic interaction between tokens that makes attention useful for ICL. Phenomenologically, we identify
 
 - key data variables: token dimension, context length, pretraining sample size, and task diversity
 - asympototic scaling regime of these variables
@@ -23,7 +23,7 @@ This repository is holds the code release for figure generation and reproduction
 
 ## Figure Roadmap
 
-The cleaned code will be organized around regenerating the paper figures.
+The code will be organized around regenerating the paper figures.
 
 #### Figure 1: Sample-Wise Double Descent
 
