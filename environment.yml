@@ -1,0 +1,21 @@
+name: incontext-asymptotics
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      # GPU-enabled JAX for NVIDIA/CUDA 12 systems.
+      # This is the important dependency for the nonlinear Transformer runs.
+      # For CPU-only local development, replace this line with:
+      #   - jax
+      # For newer CUDA 13 systems with a sufficiently recent driver, use:
+      #   - "jax[cuda13]"
+      - "jax[cuda12]"
+      - flax
+      - optax
+      - numpy
+      - scipy
+      - matplotlib
+      - seaborn
+      - tqdm
