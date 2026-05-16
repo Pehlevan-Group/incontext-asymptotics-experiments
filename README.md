@@ -124,14 +124,6 @@ python -c "import jax; print(jax.devices())"
 The output should include a CUDA device. If it only
 shows `CpuDevice`, then JAX installed but is not using the GPU. 
 
-The default GPU setup uses `jax[cuda12]`, which requires an NVIDIA driver
-version of at least 525. The CUDA 13 setup uses `jax[cuda13]`, which requires
-driver version at least 580. On clusters, create the environment where internet
-access is available, then run the JAX device check on an allocated GPU node.
-Avoid loading old CUDA or cuDNN modules unless necessary, since the JAX CUDA
-wheels include their own CUDA/cuDNN libraries and older cluster modules can
-conflict through `LD_LIBRARY_PATH`.
-
 ## Citation
 
 If you use this code, please cite the paper:
