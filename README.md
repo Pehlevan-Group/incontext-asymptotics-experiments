@@ -7,7 +7,7 @@ Pehlevan_
 Paper links:
 
 - arXiv: <https://arxiv.org/abs/2405.11751>
-- DOI: <https://doi.org/10.1073/pnas.2502599122>
+- PNAS: <https://doi.org/10.1073/pnas.2502599122>
 
 ## Paper Overview
 
