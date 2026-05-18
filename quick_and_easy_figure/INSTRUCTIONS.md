@@ -1,6 +1,6 @@
 # INSTRUCTIONS
 
-This is a proof-of-concept end-to-end plotting code meant to reproduce something akin to Figure 4 (phase transition from memorisation to generalisation in task diversity), but runable in reasonable time on CPU for demonstration purposes. We have both a data-creation function, `run.py`, and its corresponding plotting function
+This is a proof-of-concept end-to-end plotting code meant to reproduce something akin to Figure 4 (phase transition from memorisation to generalisation in task diversity), but runable in reasonable time on CPU for demonstration purposes. We have both a data-creation function, `run.py`, and its corresponding plotting function `plot.py`.
 
 An example run would be 
 ```
